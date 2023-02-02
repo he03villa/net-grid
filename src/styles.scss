@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $orange;
+    /* border-radius: 5px; */
+}
+
+/* body {
+    overflow: hidden;
+} */
+
+.navbar {
+    background: $green;
+}
+
+button {
+    background-color: $orange!important;
+    border: none!important;
+}
+
+a:hover {
+    cursor: pointer;
+    color: $pink!important;
+}
+
+.page-link {
+    color: $brown!important;
+    border-color: $brown!important;
+}
+
+.page-link:hover {
+    color: $pink!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+b {
+    color: $brown;
+}
+
+.cursorpointer {
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+        transition: all 0.2s;
+        color: $orange;
+        font-weight: bold;
+        &.titulo {
+            font-size: 2.1rem;
+        }
+        &.subtitulo {
+            font-size: 1.1rem;
+        }
+    }
+}

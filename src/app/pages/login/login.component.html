@@ -1,0 +1,35 @@
+<section>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="container">
+            <div class="form">
+                <h2>Login</h2>
+                <form [formGroup]="form">
+                    <div class="inputBox">
+                        <input type="text" formControlName="email" (keyup)="cambiarValidarMensaje()" placeholder="Correo">
+                    </div>
+                    <ng-container *ngIf="form.controls.email.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.email.errors.required">El correo está vacio</label>
+                        <label for="" *ngIf="form.controls.email.errors.email">El email no es valido</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input [type]="ojito ? 'password' : 'text'" formControlName="password" (keyup)="cambiarValidarMensaje()" class="canceInput" placeholder="Contraseña">
+                        <i [class]="ojito ? 'far fa-eye-slash' : 'far fa-eye'" (click)="ojito = !ojito"></i>
+                    </div>
+                    <ng-container *ngIf="form.controls.password.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.password.errors.required">La contraseña está vacía</label>
+                    </ng-container>
+                    <button class="btn" (click)="login($event)">Login</button>
+                    <p class="forget">No tienes cuenta ? <a (click)="service.url('registro')">Registrate</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

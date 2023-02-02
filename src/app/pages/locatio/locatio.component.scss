@@ -1,0 +1,13 @@
+.quitarultimacoma {
+    .punto {
+        display: none;
+    }
+    >span:last-child {
+        .coma {
+            display: none;
+        }
+        .punto {
+            display: unset;
+        }
+    }
+}

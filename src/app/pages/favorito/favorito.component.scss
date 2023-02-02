@@ -1,0 +1,91 @@
+.containerbuscaryfavorito {
+    .buscar {
+        order: 1;
+        @media (max-width: 575px) {
+            order: 2;
+        }
+    }
+    .favorito {
+        order: 2;
+        @media (max-width: 575px) {
+            order: 1;
+            button {
+                width: 100%;
+                margin: 16px 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.containerpersonajes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    .containerpersonajesitem {
+        display: flex;
+        @media (max-width: 575px) {
+            justify-content: center;
+        }
+    }
+    input {
+        float: right;
+        margin-top: 7px;
+    }
+}
+
+.containerbuscador {
+    display: flex;
+    @media (max-width: 575px) {
+        flex-direction: column;
+    }
+    input {
+        width: 200px;
+        @media (max-width: 575px) {
+            width: 100%;
+            margin: auto;
+        }
+    }
+    select {
+        width: 100px;
+        margin: 0 16px;
+        @media (max-width: 575px) {
+            width: 100%;
+            margin: 16px auto;
+        }
+    }
+    button {
+        width: 150px;
+        @media (max-width: 575px) {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+        padding: 9px 16px;
+    }
+}
+
+.centrarpage {
+    text-align: center;
+}
+
+.contenedornumerospaginacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    a.page-link {
+        margin-left: -1px;
+        width: 45px;
+        height: 40px;
+        text-align: center;
+    }
+}

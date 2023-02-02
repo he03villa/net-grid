@@ -1,0 +1,43 @@
+<section>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="container">
+            <div class="form">
+                <i class="fas fa-long-arrow-alt-left" (click)="service.url('login')"></i>
+                <h2>Registro</h2>
+                <form [formGroup]="form">
+                    <div class="inputBox">
+                        <input type="text" placeholder="Correo" formControlName="email" (keyup)="cambiarValidarMensaje()">
+                    </div>
+                    <ng-container *ngIf="form.controls.email.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.email.errors.required">El email está vacio</label>
+                        <label for="" *ngIf="form.controls.email.errors.email">El email no es valido</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input [type]="ojito1 ? 'password' : 'text'" formControlName="password" (keyup)="cambiarValidarMensaje()" class="canceInput" placeholder="Contraseña">
+                        <i [class]="ojito1 ? 'far fa-eye-slash' : 'far fa-eye'" (click)="ojito1 = !ojito1"></i>
+                    </div>
+                    <ng-container *ngIf="form.controls.password.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.password.errors.required">El email está vacio</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input [type]="ojito2 ? 'password' : 'text'" formControlName="passwordC" class="canceInput" placeholder="Confirmar contraseña">
+                        <i [class]="ojito2 ? 'far fa-eye-slash' : 'far fa-eye'" (click)="ojito2 = !ojito2"></i>
+                    </div>
+                    <ng-container *ngIf="form.controls.passwordC.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.passwordC.errors.required">El email está vacio</label>
+                    </ng-container>
+                    <!-- <input type="submit" value="Registrar"> -->
+                    <button class="btn" (click)="registrar($event)">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

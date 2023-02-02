@@ -1,0 +1,45 @@
+<section>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="box">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="container">
+            <div class="form">
+                <i class="fas fa-long-arrow-alt-left" (click)="service.url('dashboar')"></i>
+                <h2>Perfil</h2>
+                <form [formGroup]="form">
+                    <div class="inputBox">
+                        <input type="text" placeholder="Nombre" formControlName="name" (keyup)="cambiarValidarMensaje()">
+                    </div>
+                    <ng-container *ngIf="form.controls.name.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.name.errors.required">El Nombre está vacio</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input type="text" formControlName="address" (keyup)="cambiarValidarMensaje()" class="canceInput" placeholder="Dirección">
+                    </div>
+                    <ng-container *ngIf="form.controls.address.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.address.errors.required">La dirección está vacio</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input type="date" formControlName="birthdate" class="canceInput" placeholder="Fecha">
+                    </div>
+                    <ng-container *ngIf="form.controls.birthdate.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.birthdate.errors.required">La fecha está vacio</label>
+                    </ng-container>
+                    <div class="inputBox">
+                        <input type="text" formControlName="city" class="canceInput" placeholder="Ciudad">
+                    </div>
+                    <ng-container *ngIf="form.controls.city.errors && !validarMensaje">
+                        <label for="" *ngIf="form.controls.city.errors.required">La ciudad está vacio</label>
+                    </ng-container>
+                    <button class="btn" (click)="actualizar($event)">Actualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
