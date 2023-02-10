@@ -28,13 +28,15 @@ export class FavoritoComponent implements OnInit {
   }
 
   async listarFavoritos(ids) {
-    const res:any = await this.Character.getPersonaje(ids);
-    console.log(res);
-    console.log(res.length);
-    if (res.length) {
-      this.character = res;
-    } else {
-      this.character.push(res);
+    if (ids != '') {
+      const res:any = await this.Character.getPersonaje(ids);
+      console.log(res);
+      console.log(res.length);
+      if (res.length) {
+        this.character = res;
+      } else {
+        this.character.push(res);
+      }
     }
   }
 

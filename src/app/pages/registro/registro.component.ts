@@ -51,7 +51,8 @@ export class RegistroComponent implements OnInit {
         this.service.Alert('error', '', 'EL usuario ya existe', 'Aceptar', '', false);
       } else {
         const resp = await this.service.Alert('success', '', 'EL usuario se registro', 'Aceptar', '', false);
-        if (resp && !resp) {
+        console.log(resp);
+        if (resp || !resp) {
           this.service.url('login');
         }        
       }
